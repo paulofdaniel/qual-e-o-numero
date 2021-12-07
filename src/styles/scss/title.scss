@@ -1,0 +1,43 @@
+.title{
+    h1{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 36px;
+        background-image: rgb(239,108,0);
+        background-image: -moz-linear-gradient(180deg, rgba(239,108,0,1) 18%, rgba(219,99,0,1) 36%);
+        background-image: -webkit-linear-gradient(180deg, rgba(239,108,0,1) 18%, rgba(219,99,0,1) 36%);
+        background-image: linear-gradient(180deg, rgba(239,108,0,1) 18%, rgba(219,99,0,1) 36%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ef6c00",endColorstr="#db6300",GradientType=1);
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        -moz-text-fill-color: transparent;
+        position: relative;
+        text-transform: uppercase;
+        padding-bottom: 16px;
+        text-align: center;
+
+        &:after{
+            content: "";
+            width: 70%;
+            height: 1px;
+            background-color: #cfcfcf;
+            position: absolute;
+            bottom: 0;
+            left: 15%;
+        }
+    }
+
+    @media (max-width: 480px)
+    {
+        h1{
+            padding-bottom: 12px;
+            font-size: 24px;
+
+            &:after{
+                width: 86%!important;
+                left: 7%!important;
+            }
+        }
+    }
+}

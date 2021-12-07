@@ -1,0 +1,206 @@
+/**
+* Elementos do display feitos com div, span e pseudo elementos.
+*/
+
+$display-color-base: #ddd;
+$display-color-error: #cc3300;
+$display-color-success: #32BF00;
+$display-color-neutral: #262A34;
+$display-color-main: #FF6600;
+
+.display{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 52px 0 30px;
+    min-height: 135px;
+
+    &--error{
+        span{
+            color: $display-color-error!important;
+        }
+        .display__segment--active{
+            span, &:after, &:before{
+                background-color: $display-color-error;
+            }
+        }
+    }
+
+    &--success{
+        span{
+            color: $display-color-success!important;
+        }
+        .display__segment--active{
+            span, &:after, &:before{
+                background-color: $display-color-success;
+            }
+        }
+    }
+
+    span{
+        width: 100%;
+        flex: none;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        color: $display-color-main;
+        margin-bottom: 34px;
+        height: 16px;
+    }
+
+    &__digit{
+        width: 75px;
+        height: 135px;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 0 1.5%;
+
+        &:before, &:after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            background-color: #fafafa;
+            transform: rotate(45deg);
+            right: 109%;
+            top: 23%;
+            z-index: 100;
+        }
+
+        &:after{
+            left: 109%;
+            top: 27%;
+        }
+    }
+
+    &__segment{
+        position: absolute;
+        border-style: solid;
+        height: 12%;
+        width: 100%;
+        overflow: hidden;
+
+        span{
+            width: 40%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            margin: 0 28%;
+            background-color: $display-color-base;
+            z-index: 100;
+        }
+
+        &:before{
+            content: "";
+            position: absolute;
+            background-color:$display-color-base;
+            width: 100%;
+            height: 100%;
+            left: -21%;
+            transform: rotate(45deg); 
+        }
+        
+        &:after{
+            content: "";
+            position: absolute;
+            background-color:$display-color-base;
+            width: 100%;
+            height: 100%;
+            right: -21%;
+            transform: rotate(-45deg); 
+        }
+
+        &:nth-child(2){
+            transform: rotate(90deg);
+            transform-origin: 100% 0;
+            top: 55%;
+            right: 0;
+        }
+
+        &:nth-child(3){
+            transform: rotate(90deg);
+            transform-origin: 100% 0;
+            top: 100.5%;
+            right: 0;
+        }
+
+        &:nth-child(4){
+            transform: rotate(180deg);
+            transform-origin: 0;
+            bottom: 0%;
+            right: -100%;
+        }
+
+        &:nth-child(5){
+            transform: rotate(270deg);
+            transform-origin: 0 0;
+            top: 100.5%;
+            right: 0;
+        }
+
+        &:nth-child(6){
+            transform: rotate(270deg);
+            transform-origin: 0 0;
+            top: 55%;
+            right: 0;
+        }
+
+        &:nth-child(7){
+            top: 43.7%;
+            right: 0;
+
+            span{
+                width: 50%;
+                margin: 0 25%;
+            }
+
+            &:before{
+                left: 4%;
+                top: 131%;
+            }
+            
+            &:after{
+                right: 4%;
+                top: 131%;
+            }
+        }
+
+        &--active{
+            span, &:after, &:before{
+                background-color: $display-color-neutral;
+            }
+        }
+    }
+
+    @media (max-width: 480px)
+    {
+        margin: 90px 0 54px;
+
+        .display{
+            min-height: 100px;
+
+            &__digit{
+                width: 55px;
+                height: 100px;
+            }
+        }
+    }
+
+    @media (max-width: 360px)
+    {
+        margin: 40px 0 35px;
+
+        .display{
+            min-height: 100px;
+
+            &__digit{
+                width: 55px;
+                height: 100px;
+            }
+        }
+    }
+}

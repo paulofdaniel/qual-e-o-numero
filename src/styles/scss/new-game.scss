@@ -1,0 +1,43 @@
+.new-game{
+
+    margin-bottom: 78px;
+
+    button{
+        padding: 0 16px 0 12px;
+        border: none;
+        border-radius: 4px;
+        background: rgb(67,72,84);
+        background: -moz-linear-gradient(180deg, rgba(67,72,84,1) 0%, rgba(158,158,158,1) 100%);
+        background: -webkit-linear-gradient(180deg, rgba(67,72,84,1) 0%, rgba(158,158,158,1) 100%);
+        background: linear-gradient(180deg, rgba(67,72,84,1) 0%, rgba(158,158,158,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#434854",endColorstr="#9e9e9e",GradientType=1);
+        
+        &:disabled{
+            visibility: hidden;
+        }
+        
+        &:hover, &:active{
+            background-image: rgb(239,108,0);
+            background-image: -moz-linear-gradient(180deg, rgba(239,108,0,1) 18%, rgba(219,99,0,1) 36%);
+            background-image: -webkit-linear-gradient(180deg, rgba(239,108,0,1) 18%, rgba(219,99,0,1) 36%);
+            background-image: linear-gradient(180deg, rgba(239,108,0,1) 18%, rgba(219,99,0,1) 36%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ef6c00",endColorstr="#db6300",GradientType=1);
+            background-size: 100%;
+            cursor: pointer;
+
+            svg{
+                animation: spin .7s ease;
+            }
+        }
+    }
+
+    @media (max-width: 360px)
+    {
+        margin-bottom: 30px;
+    }
+}
+
+@keyframes spin {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(720deg)}
+}
